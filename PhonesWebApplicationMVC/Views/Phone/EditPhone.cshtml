@@ -1,0 +1,29 @@
+@model PhoneViewModel
+
+@{
+    ViewData["Title"] = "Edit Phone";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit Phone</h1>
+
+<form asp-action="EditPhone" asp-controller="Phone" method="post">
+    <input type="hidden" asp-for="Id" />
+    
+    <div class="form-group">
+        <label asp-for="PhoneName">Phone Name</label>
+        <input asp-for="PhoneName" class="form-control" value="@Model.PhoneName" />
+        <span asp-validation-for="PhoneName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneInfo">Phone Information</label>
+        <input asp-for="PhoneInfo" class="form-control" value="@Model.PhoneInfo" />
+        <span asp-validation-for="PhoneInfo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control" value="@Model.Price" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

@@ -1,0 +1,11 @@
+global using System.Diagnostics;
+global using Microsoft.AspNetCore.Authentication.Cookies;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.EntityFrameworkCore;
+global using PhonesWebApplication.Database;
+global using PhonesWebApplication.Models;
+global using PhonesWebApplication.Services.IServices;
+global using PhonesWebApplication.Services.Services;
+global using PhonesWebApplicationMVC.Models;

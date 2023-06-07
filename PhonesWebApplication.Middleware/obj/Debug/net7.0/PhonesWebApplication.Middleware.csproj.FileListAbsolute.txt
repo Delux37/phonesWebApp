@@ -1,0 +1,12 @@
+C:\Users\GBibiluri\Desktop\phoneWeb\PhonesWebApplicationMVC\PhonesWebApplication.Middleware\bin\Debug\net7.0\PhonesWebApplication.Middleware.deps.json
+C:\Users\GBibiluri\Desktop\phoneWeb\PhonesWebApplicationMVC\PhonesWebApplication.Middleware\bin\Debug\net7.0\PhonesWebApplication.Middleware.dll
+C:\Users\GBibiluri\Desktop\phoneWeb\PhonesWebApplicationMVC\PhonesWebApplication.Middleware\bin\Debug\net7.0\PhonesWebApplication.Middleware.pdb
+C:\Users\GBibiluri\Desktop\phoneWeb\PhonesWebApplicationMVC\PhonesWebApplication.Middleware\obj\Debug\net7.0\PhonesWebApplication.Middleware.csproj.AssemblyReference.cache
+C:\Users\GBibiluri\Desktop\phoneWeb\PhonesWebApplicationMVC\PhonesWebApplication.Middleware\obj\Debug\net7.0\PhonesWebApplication.Middleware.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GBibiluri\Desktop\phoneWeb\PhonesWebApplicationMVC\PhonesWebApplication.Middleware\obj\Debug\net7.0\PhonesWebApplication.Middleware.AssemblyInfoInputs.cache
+C:\Users\GBibiluri\Desktop\phoneWeb\PhonesWebApplicationMVC\PhonesWebApplication.Middleware\obj\Debug\net7.0\PhonesWebApplication.Middleware.AssemblyInfo.cs
+C:\Users\GBibiluri\Desktop\phoneWeb\PhonesWebApplicationMVC\PhonesWebApplication.Middleware\obj\Debug\net7.0\PhonesWebApplication.Middleware.csproj.CoreCompileInputs.cache
+C:\Users\GBibiluri\Desktop\phoneWeb\PhonesWebApplicationMVC\PhonesWebApplication.Middleware\obj\Debug\net7.0\PhonesWebApplication.Middleware.dll
+C:\Users\GBibiluri\Desktop\phoneWeb\PhonesWebApplicationMVC\PhonesWebApplication.Middleware\obj\Debug\net7.0\refint\PhonesWebApplication.Middleware.dll
+C:\Users\GBibiluri\Desktop\phoneWeb\PhonesWebApplicationMVC\PhonesWebApplication.Middleware\obj\Debug\net7.0\PhonesWebApplication.Middleware.pdb
+C:\Users\GBibiluri\Desktop\phoneWeb\PhonesWebApplicationMVC\PhonesWebApplication.Middleware\obj\Debug\net7.0\ref\PhonesWebApplication.Middleware.dll

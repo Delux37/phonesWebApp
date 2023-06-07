@@ -1,0 +1,28 @@
+@model List<AccessoryViewModel>
+
+<h2>Accessories list: </h2>
+
+@foreach (var accessory in Model)
+{
+    <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
+        <li
+            class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+            <p class="lead fw-normal mb-0">@accessory.AccessoryName</p>
+        </li>
+        <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+            <div class="d-flex flex-row justify-content-end mb-1">
+               @if (User.IsInRole("admin"))
+               {
+                   <form method="post" asp-action="DeleteAccessory">
+                       <input type="hidden" name="id" value="@accessory.Id"/>
+                       <button type="submit">Delete</button>
+                   </form>
+                   <form method="post" asp-action="EditAccessory">
+                       <input type="hidden" name="id" value="@accessory.Id"/>
+                       <button type="submit">Update</button>
+                   </form>
+               }
+            </div>
+        </li>
+    </ul>
+}

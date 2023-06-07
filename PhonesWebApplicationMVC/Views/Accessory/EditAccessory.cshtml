@@ -1,0 +1,20 @@
+@model AccessoryViewModel
+
+@{
+    ViewData["Title"] = "Edit Accessory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit Service</h1>
+
+<form asp-action="EditAccessory" asp-controller="Accessory" method="post">
+    <input type="hidden" asp-for="Id" />
+    
+    <div class="form-group">
+        <label asp-for="AccessoryName"></label>
+        <input asp-for="AccessoryName" class="form-control" value="@Model.AccessoryName" />
+        <span asp-validation-for="AccessoryName" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

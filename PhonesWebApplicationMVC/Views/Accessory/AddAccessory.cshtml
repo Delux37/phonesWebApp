@@ -1,0 +1,10 @@
+@model AccessoryViewModel
+
+<form asp-action="AddAccessory" method="post">
+    <div class="form-group">
+        <label asp-for="AccessoryName">Accessory:</label>
+        <input asp-for="AccessoryName" class="form-control" />
+        <span asp-validation-for="AccessoryName" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>

@@ -1,0 +1,32 @@
+@model PhoneViewModel
+
+<h1>phone</h1>
+
+
+@{
+    string path = "~/images/" + (Model.Id % 3 + 1) + ".jpg";
+}
+
+<div class="item">
+    <div class="list-image">
+        @* <img src="@Url.Content(path)"/> *@
+        <img src="@Url.Content(path)" alt="dfgdg"/>
+    </div>
+    <div class="item-name">
+        @Model.PhoneName
+    </div>
+     <div class="item-info">
+            @Model.PhoneInfo
+        </div>
+    <div class="item-info">
+        @Model.Price
+    </div>
+    <div class="actions">
+    </div>
+
+    <form method="post" action="@Url.Action("AddPhoneToCart", "Phone")">
+        <input type="hidden" name="userId" value="@User.Identity.Name" />
+        <input type="hidden" name="phoneId" value="@Model.Id" />
+        <button type="submit" class="btn btn-primary">Add to Cart</button>
+    </form>
+    </div>

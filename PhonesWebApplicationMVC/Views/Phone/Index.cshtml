@@ -1,0 +1,104 @@
+@model IEnumerable<PhoneViewModel>
+<link rel="stylesheet" href="~/css/lists.css"/>
+
+<script>
+    function resetSearch() {
+        document.getElementsByName('searchWord')[0].value = '';
+        document.getElementsByName('minAmount')[0].value = '';
+        document.getElementsByName('maxAmount')[0].value = '';
+        document.getElementsByName('sortBy')[0].selectedIndex = 0;
+    }
+</script>
+
+@using (Html.BeginForm("Index", "Phone", FormMethod.Get))
+{
+    <div class="filter-container">
+        <input type="text" name="searchWord" placeholder="Search by name" value="@ViewBag.SearchWord"/>
+        <input type="text" name="minAmount" placeholder="Min Amount" value="@ViewBag.MinAmount"/>
+        <input type="text" name="maxAmount" placeholder="Max Amount" value="@ViewBag.MaxAmount"/>
+        <select class="order-dropdown" name="sortBy">
+            <option value="">Sort Order</option>
+            <option value="true" selected="@((bool?)ViewBag.SortBy)">Ascending</option>
+            <option value="false" selected="@(!(bool?)ViewBag.SortBy)">Descending</option>
+        </select>
+        <button type="submit">
+            <img src="images/search.png"/>
+        </button>
+
+        <button type="submit" onclick="resetSearch()">
+            <img src="images/reset.png"/>
+        </button>
+    </div>
+}
+
+<div class="list-container">
+    @foreach (var phone in Model)
+    {
+        string path = "images/" + (phone.Id % 3 + 1) + ".jpg";
+
+        <div class="item">
+            <div class="template">
+                <div class="list-image">
+                    <img src="@Url.Content(path)"/>
+                </div>
+                <div class="item-name">
+                    @phone.PhoneName
+                </div>
+                <div class="item-info">
+                    @phone.Price $
+                </div>
+            </div>
+            <div class="actions">
+                @if (User.IsInRole("admin"))
+                {
+                    <form method="post" asp-action="DeletePhone">
+                        <input type="hidden" name="id" value="@phone.Id"/>
+                        <button class="delete-phone" type="submit">
+                            <img src="~/images/delete.png" alt="Delete"/>
+                        </button>
+                    </form>
+
+                    <form method="post" asp-action="EditPhone">
+                        <input type="hidden" name="id" value="@phone.Id"/>
+                        <button type="submit">
+                            <img src="~/images/edit.png" alt="Edit"/>
+                        </button>
+                    </form>
+                }
+
+                <form method="get" asp-action="ViewDetails">
+                    <input type="hidden" name="id" value="@phone.Id"/>
+                    <input type="hidden" name="page" value="@ViewBag.Page"/>
+                    <button type="submit">
+                        <img src="~/images/eye.png" alt="View"/>
+                    </button>
+                </form>
+            </div>
+        </div>
+    }
+</div>
+
+@if (ViewBag.TotalPages > 0)
+{
+    <div class="pagination">
+        @if (ViewBag.TotalPages != 1)
+        {
+            <a href="@Url.Action("Index", new { page = ViewBag.Page - 1, searchWord = ViewBag.SearchWord, minAmount = ViewBag.MinAmount, maxAmount = ViewBag.MaxAmount, sortBy = ViewBag.SortBy })">&laquo;</a>
+        }
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            if (i == ViewBag.Page)
+            {
+                <a class="active" href="@Url.Action("Index", new { page = i, searchWord = ViewBag.SearchWord, minAmount = ViewBag.MinAmount, maxAmount = ViewBag.MaxAmount, sortBy = ViewBag.SortBy })">@i</a>
+            }
+            else
+            {
+                <a href="@Url.Action("Index", new { page = i, searchWord = ViewBag.SearchWord, minAmount = ViewBag.MinAmount, maxAmount = ViewBag.MaxAmount, sortBy = ViewBag.SortBy })">@i</a>
+            }
+        }
+        @if (ViewBag.TotalPages != 1)
+        {
+            <a href="@Url.Action("Index", new { page = ViewBag.Page + 1, searchWord = ViewBag.SearchWord, minAmount = ViewBag.MinAmount, maxAmount = ViewBag.MaxAmount, sortBy = ViewBag.SortBy })">&raquo;</a>
+        }
+    </div>
+}
